@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import Dashboard from '../pages/Dashboard';
+import Suspects from '../pages/Suspects';
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'suspects',
-                element: <div className="p-6">Suspects page (TBD)</div>,
+                element: <Suspects />,
             },
             {
                 path: 'timeline',
