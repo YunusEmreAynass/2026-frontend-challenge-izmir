@@ -1,5 +1,12 @@
 {
-    "welcome": "Uygulamamıza Hoşgeldiniz",
+  "app": {
+    "title": "Podo Dedektif Paneli",
+    "dashboard": "Genel Bakış",
+    "suspects": "Şüpheliler",
+    "timeline": "Zaman Tüneli",
+    "map": "Harita Görünümü",
     "loading": "Yükleniyor...",
-    "error": "Bir hata oluştu"
+    "error": "Bir hata oluştu",
+    "language": "Dil"
+  }
 }

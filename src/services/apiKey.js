@@ -1,20 +1,20 @@
 import axios from 'axios';
 
-// Örnek Axios Instance
+// Jotform API Instance
 export const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'https://api.example.com',
-    timeout: 10000,
-    headers: {
-        'Content-Type': 'application/json',
-    },
+    baseURL: import.meta.env.VITE_BASE_URL || 'https://api.jotform.com',
+    timeout: 15000,
 });
 
-// Request Interceptor (Örneğin her isteğe Auth Token eklemek için)
+// Request Interceptor: Her isteğe API Key ekleme
 apiClient.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
+        const apiKey = import.meta.env.VITE_API_KEY;
+        
+        // Jotform API requires the API key as a query parameter
+        if (apiKey) {
+            config.params = config.params || {};
+            config.params.apiKey = apiKey;
         }
         return config;
     },
@@ -23,14 +23,18 @@ apiClient.interceptors.request.use(
     }
 );
 
-// Response Interceptor (Örneğin 401 hatası dönünce kullanıcıyı login'e atmak için)
+// Response Interceptor
 apiClient.interceptors.response.use(
-    (response) => response.data,
-    (error) => {
-        if (error.response?.status === 401) {
-            console.error('Oturum süresi doldu!');
-            // Auth sıfırlama işlemleri...
+    (response) => {
+        // Jotform returns actual data inside response.data.content
+        if (response.data && response.data.responseCode === 200) {
+            return response.data.content;
         }
+        return response.data;
+    },
+    (error) => {
+        console.error('API Error:', error.response?.data?.message || error.message);
         return Promise.reject(error);
     }
 );
+
