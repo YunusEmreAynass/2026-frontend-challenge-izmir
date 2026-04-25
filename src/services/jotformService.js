@@ -25,7 +25,7 @@ export const jotformService = {
     getSightings: () => getSubmissions(formIds.sightings),
     getPersonalNotes: () => getSubmissions(formIds.personalNotes),
     getAnonymousTips: () => getSubmissions(formIds.anonymousTips),
-    
+
     // Tüm verileri asenkron olarak paralel yüklemek için yararlı metod
     getAllData: async () => {
         const [checkins, messages, sightings, personalNotes, anonymousTips] = await Promise.all([

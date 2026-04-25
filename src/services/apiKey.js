@@ -10,7 +10,7 @@ export const apiClient = axios.create({
 apiClient.interceptors.request.use(
     (config) => {
         const apiKey = import.meta.env.VITE_API_KEY;
-        
+
         // Jotform API requires the API key as a query parameter
         if (apiKey) {
             config.params = config.params || {};

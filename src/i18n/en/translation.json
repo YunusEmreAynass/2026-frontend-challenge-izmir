@@ -1,12 +1,12 @@
 {
-  "app": {
-    "title": "Podo Detective Dashboard",
-    "dashboard": "Dashboard",
-    "suspects": "Suspects",
-    "timeline": "Master Timeline",
-    "map": "Map View",
-    "loading": "Loading...",
-    "error": "An error occurred",
-    "language": "Language"
-  }
+    "app": {
+        "title": "Podo Detective Dashboard",
+        "dashboard": "Dashboard",
+        "suspects": "Suspects",
+        "timeline": "Master Timeline",
+        "map": "Map View",
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "language": "Language"
+    }
 }
