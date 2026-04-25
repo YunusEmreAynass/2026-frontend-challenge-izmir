@@ -9,9 +9,10 @@ export const apiClient = axios.create({
 // Request Interceptor: Her isteğe API Key ekleme
 apiClient.interceptors.request.use(
     (config) => {
-        const apiKey = import.meta.env.VITE_API_KEY;
+        // Fallback directly to the key if VITE_API_KEY is not immediately available
+        const apiKey = import.meta.env.VITE_API_KEY || 'b119f8e8fd7fe6fbdb3aa032cef23299';
 
-        // Jotform API requires the API key as a query parameter
+        // Jotform API requires the API key exactly as a query parameter (apiKey)
         if (apiKey) {
             config.params = config.params || {};
             config.params.apiKey = apiKey;
