@@ -3,10 +3,10 @@
 ## User Information
 Please fill in your information after forking this repository:
 
-- **Name**: [Your Name]
+- **Name**: YUNUS EMRE AYNAS
 
 ## Project Description
-[Add a brief description of your project here]
+A demo project for Jotform's Frontend Challenge, showcasing my skills in frontend development and my ability to create a responsive and user-friendly web application based on a given scenario.
 
 ## Getting Started
 [Add instructions for setting up and running the project]
